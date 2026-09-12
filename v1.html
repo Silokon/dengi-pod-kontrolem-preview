@@ -110,7 +110,36 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:tra
 .form-msg.ok{display:block;color:#1f7a3d}
 .form-msg.err{display:block;color:#c0392b}
 
+
+.topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.topbar .logo{font-weight:800;letter-spacing:-0.02em;font-size:17px}
+.topbar nav{display:flex;gap:24px;font-size:15px;color:var(--ink-2)}
+.topbar nav a{text-decoration:none}
+.topbar nav a:hover{color:var(--ink)}
+.topbar .btn{padding:11px 22px;font-size:15px}
+.perks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.perk{display:flex;flex-direction:column;gap:10px}
+.perk .ico{width:44px;height:44px;border-radius:12px;background:#fff4cc;display:flex;align-items:center;justify-content:center}
+.perk h3{font-size:18px;margin:0}
+.perk p{font-size:15px;margin:0}
+.cmp{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:34px}
+.cmp .crow{display:grid;grid-template-columns:1.5fr 1fr 1fr;border-top:1px solid var(--line)}
+.cmp .crow:first-child{border-top:0;font-weight:700}
+.cmp .crow>div{padding:15px 20px;border-left:1px solid var(--line);font-size:16px}
+.cmp .crow>div:first-child{border-left:0;color:var(--ink-2)}
+.cmp .crow .best{background:#fffbec}
+.cmp .crow:first-child{background:var(--bg-soft)}
+.cmp .crow:first-child .best{background:#fff4cc}
+.yes{font-weight:700;color:#7a5e00}
+.no{color:var(--ink-3)}
+
 @media(max-width:860px){
+  .topbar nav{display:none}
+  .perks{grid-template-columns:1fr 1fr}
+  .cmp .crow{grid-template-columns:1fr .6fr .6fr}
+  .cmp .crow>div{padding:12px 14px;font-size:15px}
+
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
   .plans{grid-template-columns:1fr}
@@ -121,6 +150,18 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:tra
 </style>
 </head>
 <body>
+
+<div class="topbar">
+  <div class="wrap in">
+    <span class="logo">Деньги под контролем</span>
+    <nav>
+      <a href="#vnutri">Что внутри</a>
+      <a href="#tarify">Тарифы</a>
+      <a href="#voprosy">Вопросы</a>
+    </nav>
+    <a class="btn" href="#tarify">Выбрать тариф</a>
+  </div>
+</div>
 
 <section class="hero wrap">
   <div class="eyebrow">Деньги под контролем</div>
@@ -134,7 +175,32 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:tra
   <a href="#tarify" class="btn">Выбрать тариф</a>
 </section>
 
-<section class="soft">
+<section class="wrap" style="padding-block:44px;border-bottom:1px solid var(--line)">
+  <div class="perks">
+    <div class="perk">
+      <span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b08900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M5 8l7-5 7 5"></path><path d="M5 16l7 5 7-5"></path></svg></span>
+      <h3>Считаешь на своих цифрах</h3>
+      <p>Пять шагов практикума на твоих данных, а не теория из учебника.</p>
+    </div>
+    <div class="perk">
+      <span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b08900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M9 10v10"></path></svg></span>
+      <h3>Нормы по своей отрасли</h3>
+      <p>Услуги, торговля, производство, онлайн и общепит. Видно, где зелёная зона.</p>
+    </div>
+    <div class="perk">
+      <span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b08900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"></path><path d="M9 10h6"></path><path d="M9 14h6"></path></svg></span>
+      <h3>12 готовых решений</h3>
+      <p>Под каждую частую проблему: что делать и пример с цифрами.</p>
+    </div>
+    <div class="perk">
+      <span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b08900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M8 13l2 2 4-4"></path></svg></span>
+      <h3>План на первые 30 дней</h3>
+      <p>Конкретные задачи по неделям, с чекбоксами и точкой отсчёта.</p>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="vnutri">
   <div class="wrap">
     <h2>Восемь инструментов, которые уже внутри</h2>
     <p class="lead" style="margin-bottom:34px">Открываешь сразу после оплаты, доступ остаётся навсегда.</p>
@@ -277,6 +343,18 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:tra
         <button class="btn btn-wide" data-order="Система" data-price="7900">Купить за 7 900 ₽</button>
       </div>
     </div>
+
+    <div class="cmp">
+      <div class="crow"><div>Что входит</div><div>Диагноз</div><div class="best">Система</div></div>
+      <div class="crow"><div>Маршрутная карта и таблица норм</div><div class="yes">есть</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Практикум и чек-лист</div><div class="yes">есть</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Рабочая тетрадь и гайд по цене</div><div class="yes">есть</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Таблица расчётов и план на 30 дней</div><div class="yes">есть</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Взгляд эксперта на твой бизнес</div><div class="no">нет</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Приоритеты именно для тебя</div><div class="no">нет</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Письменное резюме после разбора</div><div class="no">нет</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Один вопрос после разбора</div><div class="no">нет</div><div class="best yes">есть</div></div>
+    </div>
   </div>
 </section>
 
@@ -298,7 +376,7 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:tra
   </div>
 </section>
 
-<section class="soft">
+<section class="soft" id="voprosy">
   <div class="wrap faq">
     <h2>Ответы на вопросы</h2>
     <details>
