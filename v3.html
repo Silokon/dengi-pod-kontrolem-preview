@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Деньги под контролем, вариант 3, холодный нейтральный</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c2023;--ink-2:#525a61;--ink-3:#868e95;--line:#e2e5e8;--yellow:#8fa3ad;--yellow-soft:#e9eef1;--yellow-deep:#4e626c}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:17px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px}
+section{padding-block:64px}
+h1,h2,h3{line-height:1.12;margin:0 0 16px;letter-spacing:-0.02em}
+h1{font-size:clamp(32px,5.4vw,58px);font-weight:800}
+h2{font-size:clamp(26px,3.6vw,40px);font-weight:800}
+h3{font-size:20px;font-weight:700}
+p{margin:0 0 14px;color:var(--ink-2)}
+.btn{display:inline-block;background:var(--yellow);color:var(--ink);text-decoration:none;font-weight:700;font-size:16px;padding:16px 32px;border:0;border-radius:6px;cursor:pointer;font-family:inherit;letter-spacing:.02em;text-transform:uppercase}
+.btn:hover{background:#7d929d}
+.btn-wide{display:block;width:100%;text-align:center}
+.pill{display:inline-block;background:var(--yellow-soft);color:var(--yellow-deep);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:4px}
+
+.hero{padding-top:72px;padding-bottom:56px;border-bottom:1px solid var(--line)}
+.hero p.lead{font-size:clamp(17px,2vw,21px);max-width:620px;margin:18px 0 28px}
+.hero .mark{display:inline-block;border-bottom:6px solid var(--yellow);padding-bottom:2px}
+.qs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0 0;text-align:left}
+.qs div{background:#f6f8f9;border:1px solid var(--line);border-radius:8px;padding:20px 22px;font-size:16px;font-weight:600}
+.qs span{display:block;font-size:13px;font-weight:700;color:var(--yellow-deep);margin-bottom:8px;letter-spacing:.1em}
+
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.tile{background:#f8fafb;border:1px solid #e2e7ea;border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.tile .kicker{font-size:14px;font-weight:700;color:var(--yellow-deep)}
+.tile p{font-size:16px;margin:0 0 10px}
+.tile .btn{margin-top:auto}
+
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:start}
+.plan{border:1px solid var(--line);border-radius:8px;padding:30px;display:flex;flex-direction:column;height:100%}
+.plan.best{border:2px solid var(--yellow);background:#f8fafb}
+.price{font-size:38px;font-weight:800;margin:8px 0 2px;letter-spacing:-0.03em}
+.price small{display:block;font-size:14px;font-weight:500;color:var(--ink-3);letter-spacing:0}
+.plan ul{list-style:none;padding:0;margin:20px 0 26px}
+.plan li{position:relative;padding:8px 0 8px 26px;font-size:16px;border-bottom:1px solid var(--line)}
+.plan li:last-child{border-bottom:0}
+.plan li:before{content:"";position:absolute;left:1px;top:14px;width:11px;height:6px;border-left:2px solid #6f858f;border-bottom:2px solid #6f858f;transform:rotate(-45deg)}
+.plan .btn{margin-top:auto}
+
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;font-weight:700;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:6px;top:15px;font-size:22px;color:#6f858f}
+.faq details[open] summary:after{content:"\2212"}
+.faq p{margin:0 0 18px}
+
+.cta{background:var(--yellow);text-align:center}
+.cta p{color:#26343a;max-width:620px;margin:0 auto 24px}
+.cta .btn{background:var(--ink);color:#fff}
+footer{background:#f6f8f9;padding:34px 0;font-size:14px;color:var(--ink-3);border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+@media(max-width:860px){.qs{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}.plans{grid-template-columns:1fr}section{padding-block:48px}}
+</style>
+</head>
+<body>
+
+<section class="hero wrap">
+  <span class="pill">Один вечер работы</span>
+  <h1 style="margin-top:22px">Найди, куда уходят<br><span class="mark">твои деньги</span></h1>
+  <p class="lead">Выручка есть, а что происходит с деньгами, непонятно. Работаешь больше, зарабатываешь меньше и не знаешь, почему.</p>
+  <a class="btn" href="#tarify">Выбрать тариф</a>
+  <div class="qs">
+    <div><span>01</span>Где конкретно оседают деньги и сколько это стоит в год</div>
+    <div><span>02</span>Нормально ли у тебя всё или уже давно горит красный</div>
+    <div><span>03</span>Что делать первым, чтобы прибыль начала расти</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Восемь инструментов, которые уже внутри</h2>
+  <p style="margin-bottom:30px">Открываешь сразу после оплаты, доступ остаётся навсегда.</p>
+  <div class="tiles">
+    <div class="tile">
+      <h3>Маршрутная карта</h3>
+      <div class="kicker">С чего начать и что делать первые 30 дней</div>
+      <p>Одна страница, которая говорит, что делать сегодня, на этой неделе и к концу месяца. Не будешь смотреть на папку с файлами, не зная, за что хвататься.</p>
+      <a class="btn btn-wide" href="#tarify">Выбрать тариф</a>
+    </div>
+    <div class="tile">
+      <h3>Таблица норм</h3>
+      <div class="kicker">Проверь свои цифры за 2 минуты</div>
+      <p>Нормы маржи, ФОТ, прибыли и запаса прочности для услуг, торговли, производства, онлайна и общепита. Находишь свою строку и видишь, где горит красный.</p>
+      <a class="btn btn-wide" href="#tarify">Выбрать тариф</a>
+    </div>
+    <div class="tile">
+      <h3>Практикум</h3>
+      <div class="kicker">Найди дыру в бизнесе за один вечер</div>
+      <p>5 шагов прямо на твоих цифрах. На каждом шаге задание, пример и норма. В конце диагноз и три первых шага, написанных твоей рукой.</p>
+      <a class="btn btn-wide" href="#tarify">Выбрать тариф</a>
+    </div>
+    <div class="tile">
+      <h3>Чек-лист</h3>
+      <div class="kicker">10 мест, где прямо сейчас утекают деньги</div>
+      <p>Одна страница, десять пунктов, пять минут. Ставишь галочки там, где узнал себя, и сразу видно, какая дыра стоит тебе больше всего.</p>
+      <a class="btn btn-wide" href="#tarify">Выбрать тариф</a>
+    </div>
+    <div class="tile">
+      <h3>Рабочая тетрадь</h3>
+      <div class="kicker">12 решений, когда нашёл проблему</div>
+      <p>12 инструментов под 12 частых финансовых проблем. Почему возникает, что делать, реальный пример с цифрами и как применить прямо сейчас.</p>
+      <a class="btn btn-wide" href="#tarify">Выбрать тариф</a>
+    </div>
+    <div class="tile">
+      <h3>Гайд по цене</h3>
+      <div class="kicker">Как поднять цену и не потерять клиентов</div>
+      <p>Четыре стратегии повышения и готовые фразы для разговора. Скидка 10% при марже 30% съедает треть прибыли, после гайда так просто на неё не соглашаешься.</p>
+      <a class="btn btn-wide" href="#tarify">Выбрать тариф</a>
+    </div>
+    <div class="tile">
+      <h3>Таблица расчётов</h3>
+      <div class="kicker">Считает твои деньги сама</div>
+      <p>Вводишь цифры в жёлтые ячейки, она считает показатели и подсвечивает, где проблема. Маржа, ФОТ, прибыль, LTV, CAC и запас прочности в одном месте.</p>
+      <a class="btn btn-wide" href="#tarify">Выбрать тариф</a>
+    </div>
+    <div class="tile">
+      <h3>План на 30 дней</h3>
+      <div class="kicker">Что делать первые четыре недели</div>
+      <p>Считаешь и видишь картину, закрываешь самую дорогую дыру, выстраиваешь контроль и сравниваешь результат с точкой отсчёта.</p>
+      <a class="btn btn-wide" href="#tarify">Выбрать тариф</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="tarify" style="border-top:1px solid var(--line)">
+  <h2>Два тарифа</h2>
+  <p style="margin-bottom:30px">Хочешь разобраться сам, бери «Диагноз». Хочешь, чтобы на твои цифры посмотрели лично, бери «Систему».</p>
+  <div class="plans">
+    <div class="plan">
+      <h3>Диагноз</h3>
+      <div class="price">3 900 ₽<small>Разовая покупка, доступ навсегда</small></div>
+      <ul>
+        <li>Все восемь инструментов</li>
+        <li>Практикум и таблица норм</li>
+        <li>План первых 30 дней</li>
+        <li>Доступ сразу после оплаты</li>
+      </ul>
+      <button class="btn btn-wide">Купить за 3 900 ₽</button>
+    </div>
+    <div class="plan best">
+      <span class="pill">не более 15 мест в месяц</span>
+      <h3 style="margin-top:16px">Система</h3>
+      <div class="price">7 900 ₽<small>Разовая покупка, доступ навсегда</small></div>
+      <ul>
+        <li>Всё из тарифа «Диагноз»</li>
+        <li>Персональный разбор голосом</li>
+        <li>Приоритеты именно для тебя</li>
+        <li>Письменное резюме и вопрос после</li>
+      </ul>
+      <button class="btn btn-wide">Купить за 7 900 ₽</button>
+    </div>
+  </div>
+</section>
+
+<section class="wrap faq" style="border-top:1px solid var(--line)">
+  <h2>Частые вопросы</h2>
+  <details><summary>Подойдёт ли мне, если я новичок?</summary><p>Материал написан для тех, кто уже ведёт бизнес или работает на себя. Базовые понятия объясняются внутри каждого инструмента.</p></details>
+  <details open><summary>У меня маленький бизнес, мне это нужно?</summary><p>Чем меньше бизнес, тем острее каждая финансовая ошибка. Все инструменты работают от 100 000 ₽ выручки в месяц.</p></details>
+  <details><summary>Чем это отличается от бесплатной таблицы из интернета?</summary><p>Таблица считает цифры. Этот продукт объясняет, что они значат, показывает потери и даёт 12 конкретных решений.</p></details>
+  <details><summary>Когда получу материалы?</summary><p>После оплаты на почту придёт письмо с доступами. Не нашли письмо, проверьте папки «Спам» и «Промоакции».</p></details>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Начни сегодня</h2>
+    <p>Через неделю ты либо найдёшь деньги, которые уже есть в бизнесе, либо убедишься, что всё хорошо, и перестанешь тратить силы на тревогу.</p>
+    <a class="btn" href="#tarify">Выбрать тариф</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><a href="privacy.html" style="color:inherit;margin-right:18px">Политика конфиденциальности</a><a href="offer.html" style="color:inherit">Публичная оферта</a></div>
+    <div>© 2026 «Деньги под контролем»</div>
+  </div>
+</footer>
+
+</body>
+</html>
