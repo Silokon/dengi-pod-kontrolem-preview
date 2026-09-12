@@ -3,44 +3,523 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Деньги под контролем, варианты оформления</title>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Деньги под контролем</title>
+<meta name="description" content="За один вечер найди куда уходят твои деньги и получи конкретный план что с этим делать.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#f7f7f5;color:#1e1e1c;font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
-.wrap{max-width:860px;margin:0 auto;padding:56px 20px 80px}
-h1{font-size:clamp(28px,4vw,36px);font-weight:800;letter-spacing:-0.02em;margin:0 0 10px}
-p.lead{color:#57564f;margin:0 0 34px}
-a.card{display:flex;gap:20px;align-items:center;background:#fff;border:1px solid #e8e8e4;border-radius:12px;padding:22px 24px;margin-bottom:14px;text-decoration:none;color:inherit}
-a.card:hover{border-color:#c9c7c0}
-.sw{display:flex;gap:8px;flex:0 0 auto}
-.sw i{width:26px;height:26px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.06)}
-h2{font-size:19px;font-weight:700;margin:0 0 4px}
-span.desc{color:#57564f;font-size:15px}
-.note{font-size:14px;color:#8a8880;margin-top:28px}
-@media(max-width:560px){a.card{flex-direction:column;align-items:flex-start;gap:12px}}
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f7f7f4;
+  --ink:#1e1e1c;
+  --ink-2:#57564f;
+  --ink-3:#8a8880;
+  --line:#e8e8e4;
+  --accent:#ffce32;
+  --accent-dark:#f2bf15;
+  --radius:14px;
+  --maxw:1080px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:20px;padding-right:20px}
+section{padding-block:72px}
+.soft{background:var(--bg-soft)}
+h1,h2,h3{line-height:1.15;margin:0 0 18px;letter-spacing:-0.02em}
+h1{font-size:clamp(30px,5vw,52px);font-weight:800}
+h2{font-size:clamp(25px,3.6vw,38px);font-weight:700}
+h3{font-size:clamp(19px,2.2vw,23px);font-weight:700}
+p{margin:0 0 16px;color:var(--ink-2)}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:760px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#7a5e00;background:#fff4cc;display:inline-block;padding:8px 14px;border-radius:999px;margin-bottom:14px}
+.btn{display:inline-block;background:var(--accent);color:var(--ink);text-decoration:none;font-weight:600;font-size:17px;padding:16px 34px;border:0;border-radius:10px;cursor:pointer;transition:background .15s ease;font-family:inherit}
+.btn:hover{background:var(--accent-dark)}
+.btn-wide{width:100%;text-align:center}
+
+.hero{padding-top:64px;padding-bottom:80px}
+.hero .q{list-style:none;padding:0;margin:0 0 32px;max-width:720px}
+.hero .q li{padding:14px 0 14px 30px;border-bottom:1px solid var(--line);position:relative;color:var(--ink);font-weight:500}
+.hero .q li:before{content:"";position:absolute;left:4px;top:23px;width:10px;height:2px;background:#b08900}
+
+.grid{display:grid;gap:22px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.feature{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:0 1px 2px rgba(30,30,28,.04)}
+.feature .head{display:flex;align-items:center;gap:14px}
+.feature .btn{margin-top:auto;width:100%;text-align:center;font-size:16px;padding:15px}
+.badge{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#7a5e00;background:#fff4cc;padding:6px 11px;border-radius:999px;margin-left:auto}
+.feature h3{margin-bottom:6px}
+.feature p:last-child{margin-bottom:0}
+
+.video-ph{aspect-ratio:16/9;max-width:100%;background:#eceae5;border:1px dashed #cfcbc3;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--ink-3);font-size:15px;margin:8px 0 4px}
+.video-embed{aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden}
+.video-embed iframe{width:100%;height:100%;border:0;display:block}
+
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:start}
+.plan{border:1px solid var(--line);border-radius:var(--radius);padding:32px;background:#fff;display:flex;flex-direction:column;height:100%}
+.plan.best{border:2px solid var(--accent);background:#fffbec;position:relative}
+.plan .tag{position:absolute;top:-13px;left:32px;background:var(--accent);color:var(--ink);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:6px}
+.price{font-size:40px;font-weight:800;letter-spacing:-0.03em;margin:6px 0 4px}
+.price small{font-size:15px;font-weight:500;color:var(--ink-3);display:block;letter-spacing:0}
+.plan ul{list-style:none;padding:0;margin:22px 0 28px}
+.plan ul li{padding:9px 0 9px 28px;position:relative;font-size:16px;border-bottom:1px solid var(--line)}
+.plan ul li:last-child{border-bottom:0}
+.plan ul li:before{content:"";position:absolute;left:2px;top:15px;width:12px;height:7px;border-left:2px solid #b08900;border-bottom:2px solid #b08900;transform:rotate(-45deg)}
+.plan .btn{margin-top:auto}
+.steps{counter-reset:s;list-style:none;padding:0;margin:18px 0 26px}
+.steps li{counter-increment:s;position:relative;padding:8px 0 8px 34px;font-size:15px;color:var(--ink-2)}
+.steps li:before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--bg-soft);color:var(--ink);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:600;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:8px;top:17px;font-size:24px;font-weight:400;color:#b08900}
+.faq details[open] summary:after{content:"\2212"}
+.faq details p{margin:0 0 20px}
+
+.final{background:#fffbec;text-align:center}
+.final h2{color:var(--ink)}
+.final p{color:var(--ink-2);max-width:680px;margin-left:auto;margin-right:auto}
+.final .note{font-size:14px;color:var(--ink-3);margin-top:22px}
+
+footer{background:var(--bg-soft);padding:44px 0;font-size:14px;color:var(--ink-3)}
+footer a{color:var(--ink-2);text-decoration:none;margin-right:20px}
+footer a:hover{text-decoration:underline}
+.foot-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+
+.overlay{position:fixed;inset:0;background:rgba(20,20,20,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.overlay.open{display:flex}
+.modal{background:#fff;border-radius:var(--radius);max-width:460px;width:100%;padding:32px;max-height:90vh;overflow:auto;position:relative}
+.modal h3{margin-bottom:6px}
+.modal .sub{font-size:15px;color:var(--ink-3);margin-bottom:22px}
+.close{position:absolute;right:18px;top:14px;background:none;border:0;font-size:26px;line-height:1;color:var(--ink-3);cursor:pointer}
+label{display:block;font-size:14px;font-weight:500;margin-bottom:6px}
+input[type=text],input[type=email],input[type=tel]{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:9px;font-size:16px;font-family:inherit;margin-bottom:16px;background:#fff;color:var(--ink)}
+input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-3);font-weight:400;margin-bottom:20px}
+.check input{margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:var(--accent)}
+.check a{color:var(--ink-2)}
+.form-msg{font-size:14px;margin-top:14px;display:none}
+.form-msg.ok{display:block;color:#1f7a3d}
+.form-msg.err{display:block;color:#c0392b}
+
+
+.topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.topbar .logo{font-weight:800;letter-spacing:-0.02em;font-size:17px}
+.topbar nav{display:flex;gap:24px;font-size:15px;color:var(--ink-2)}
+.topbar nav a{text-decoration:none}
+.topbar nav a:hover{color:var(--ink)}
+.topbar .btn{padding:11px 22px;font-size:15px}
+.perks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.perk{display:flex;flex-direction:column;gap:10px}
+.perk .ico{width:44px;height:44px;border-radius:12px;background:#fff4cc;display:flex;align-items:center;justify-content:center}
+.perk h3{font-size:18px;margin:0}
+.perk p{font-size:15px;margin:0}
+.cmp{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:34px}
+.cmp .crow{display:grid;grid-template-columns:1.5fr 1fr 1fr;border-top:1px solid var(--line)}
+.cmp .crow:first-child{border-top:0;font-weight:700}
+.cmp .crow>div{padding:15px 20px;border-left:1px solid var(--line);font-size:16px}
+.cmp .crow>div:first-child{border-left:0;color:var(--ink-2)}
+.cmp .crow .best{background:#fffbec}
+.cmp .crow:first-child{background:var(--bg-soft)}
+.cmp .crow:first-child .best{background:#fff4cc}
+.yes{font-weight:700;color:#7a5e00}
+.no{color:var(--ink-3)}
+
+@media(max-width:860px){
+  .topbar nav{display:none}
+  .perks{grid-template-columns:1fr 1fr}
+  .cmp .crow{grid-template-columns:1fr .6fr .6fr}
+  .cmp .crow>div{padding:12px 14px;font-size:15px}
+
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .plans{grid-template-columns:1fr}
+  section{padding-block:52px}
+  .tiles{grid-template-columns:1fr}
+  .feature{padding:26px 22px}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<h1>Деньги под контролем</h1>
-<p class="lead">Три варианта одной и той же страницы. Текст везде одинаковый, отличаются компоновка блоков, шрифты и цвет. Открываются и с телефона.</p>
 
-<a class="card" href="v1.html">
-  <span class="sw"><i style="background:#ffce32"></i><i style="background:#fff4cc"></i><i style="background:#1e1e1c"></i></span>
-  <span><h2>Вариант 1, плитки</h2><span class="desc">Как на сайте, который вы присылали: жёлтые кнопки, блоки одинаковыми плитками по две в ряд.</span></span>
-</a>
-
-<a class="card" href="v2.html">
-  <span class="sw"><i style="background:#c9ac70"></i><i style="background:#efe9dc"></i><i style="background:#1e1e1c"></i></span>
-  <span><h2>Вариант 2, строчный</h2><span class="desc">Первый экран по центру, инструменты идут широкими строками, тарифы сравниваются таблицей. Песочный акцент.</span></span>
-</a>
-
-<a class="card" href="v3.html">
-  <span class="sw"><i style="background:#8fa3ad"></i><i style="background:#e9eef1"></i><i style="background:#1c2023"></i></span>
-  <span><h2>Вариант 3, журнальный</h2><span class="desc">Заголовки с засечками, сетка в три колонки, тарифы без карточек. Сдержанный серо-голубой акцент.</span></span>
-</a>
-
-<p class="note">Адрес технический, для показа. После согласования сайт переедет на ваш домен.</p>
+<div class="topbar">
+  <div class="wrap in">
+    <span class="logo">Деньги под контролем</span>
+    <nav>
+      <a href="#vnutri">Что внутри</a>
+      <a href="#tarify">Тарифы</a>
+      <a href="#voprosy">Вопросы</a>
+    </nav>
+    <a class="btn" href="#tarify">Выбрать тариф</a>
+  </div>
 </div>
+
+<section class="hero wrap">
+  <div class="eyebrow">Деньги под контролем</div>
+  <h1>Редкая возможность за один вечер найти куда уходят твои деньги и получить конкретный план что с этим делать</h1>
+  <p class="lead">Большинство предпринимателей работают вслепую: выручка есть, а что происходит с деньгами непонятно. Работают больше, зарабатывают меньше и не знают почему.</p>
+  <ul class="q">
+    <li>Где конкретно оседают деньги прямо сейчас и сколько это стоит в год?</li>
+    <li>Нормально ли у тебя всё или уже давно горит красный?</li>
+    <li>Что делать первым чтобы прибыль начала расти?</li>
+  </ul>
+  <a href="#tarify" class="btn">Выбрать тариф</a>
+</section>
+
+<section class="wrap" style="padding-block:44px;border-bottom:1px solid var(--line)">
+  <div class="perks">
+    <div class="perk">
+      <span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b08900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M5 8l7-5 7 5"></path><path d="M5 16l7 5 7-5"></path></svg></span>
+      <h3>Считаешь на своих цифрах</h3>
+      <p>Пять шагов практикума на твоих данных, а не теория из учебника.</p>
+    </div>
+    <div class="perk">
+      <span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b08900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M9 10v10"></path></svg></span>
+      <h3>Нормы по своей отрасли</h3>
+      <p>Услуги, торговля, производство, онлайн и общепит. Видно, где зелёная зона.</p>
+    </div>
+    <div class="perk">
+      <span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b08900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"></path><path d="M9 10h6"></path><path d="M9 14h6"></path></svg></span>
+      <h3>12 готовых решений</h3>
+      <p>Под каждую частую проблему: что делать и пример с цифрами.</p>
+    </div>
+    <div class="perk">
+      <span class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#b08900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M8 13l2 2 4-4"></path></svg></span>
+      <h3>План на первые 30 дней</h3>
+      <p>Конкретные задачи по неделям, с чекбоксами и точкой отсчёта.</p>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="vnutri">
+  <div class="wrap">
+    <h2>Восемь инструментов, которые уже внутри</h2>
+    <p class="lead" style="margin-bottom:34px">Открываешь сразу после оплаты, доступ остаётся навсегда.</p>
+
+    <div class="tiles">
+      <div class="feature">
+        <div class="head"><div class="num">01</div><h3>Маршрутная карта</h3></div>
+        <div class="kicker">С чего начать и что делать первые 30 дней</div>
+        <p>Это первое, что открываешь после покупки. Одна страница, которая говорит, что делать сегодня, на этой неделе и к концу месяца. Не потеряешься и не будешь смотреть на папку с файлами, не зная, за что хвататься.</p>
+        <a class="btn" href="#tarify">Выбрать тариф</a>
+      </div>
+
+      <div class="feature">
+        <div class="head"><div class="num">02</div><h3>Таблица норм</h3></div>
+        <div class="kicker">Проверь свои цифры за 2 минуты</div>
+        <p>Нормы маржи, ФОТ, прибыли и запаса прочности для услуг, торговли, производства, онлайна и общепита. Находишь свою строку и сразу видишь, где ты в зелёной зоне, а где горит красный.</p>
+        <a class="btn" href="#tarify">Выбрать тариф</a>
+      </div>
+
+      <div class="feature">
+        <div class="head"><div class="num">03</div><h3>Практикум</h3><span class="badge">главный материал</span></div>
+        <div class="kicker">Найди дыру в бизнесе за один вечер</div>
+        <p>5 шагов прямо на твоих цифрах: чистая прибыль, маржа, ФОТ, стоимость клиента, запас прочности. На каждом шаге задание, пример и норма. В конце диагноз и три первых шага, написанных твоей рукой.</p>
+        <a class="btn" href="#tarify">Выбрать тариф</a>
+      </div>
+
+      <div class="feature">
+        <div class="head"><div class="num">04</div><h3>Чек-лист</h3></div>
+        <div class="kicker">10 мест, где прямо сейчас утекают деньги</div>
+        <p>Одна страница, десять пунктов, пять минут. Ставишь галочки там, где узнал себя. Сразу видно, какая дыра стоит тебе больше всего. С неё и начинаешь, не гадаешь и не распыляешься.</p>
+        <a class="btn" href="#tarify">Выбрать тариф</a>
+      </div>
+
+      <div class="feature">
+        <div class="head"><div class="num">05</div><h3>Рабочая тетрадь</h3></div>
+        <div class="kicker">12 решений, когда нашёл проблему</div>
+        <p>12 инструментов под 12 самых частых финансовых проблем малого бизнеса. Каждый в формате: почему возникает, что конкретно делать, реальный пример с цифрами и как применить прямо сейчас.</p>
+        <a class="btn" href="#tarify">Выбрать тариф</a>
+      </div>
+
+      <div class="feature">
+        <div class="head"><div class="num">06</div><h3>Гайд по цене</h3></div>
+        <div class="kicker">Как поднять цену и не потерять клиентов</div>
+        <p>Четыре стратегии повышения, психология цены и готовые фразы для разговора с клиентом. Скидка 10% при марже 30% съедает треть прибыли. После гайда больше не соглашаешься на неё, не посчитав.</p>
+        <a class="btn" href="#tarify">Выбрать тариф</a>
+      </div>
+
+      <div class="feature">
+        <div class="head"><div class="num">07</div><h3>Таблица расчётов</h3></div>
+        <div class="kicker">Считает твои деньги сама</div>
+        <p>Вводишь цифры в жёлтые ячейки, она сама считает показатели и подсвечивает красным, где проблема. Маржа, ФОТ, прибыль, LTV, CAC и запас прочности в одном месте. Заполняешь раз в месяц.</p>
+        <a class="btn" href="#tarify">Выбрать тариф</a>
+      </div>
+
+      <div class="feature">
+        <div class="head"><div class="num">08</div><h3>План на 30 дней</h3></div>
+        <div class="kicker">Что делать первые четыре недели</div>
+        <p>Считаешь и видишь реальную картину, закрываешь самую дорогую дыру, выстраиваешь систему контроля и сравниваешь результат с точкой отсчёта. К концу месяца уже что-то изменил.</p>
+        <a class="btn" href="#tarify">Выбрать тариф</a>
+      </div>
+    </div>
+
+    <div class="grid grid-3" style="margin-top:24px">
+      <div class="video-ph" data-video="praktikum">Здесь будет видео</div>
+      <div class="video-ph" data-video="guide">Здесь будет видео</div>
+      <div class="video-ph" data-video="sistema">Здесь будет видео</div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">На тарифе «Система»</div>
+  <h2>Я лично смотрю на твой бизнес</h2>
+  <div class="grid grid-2" style="margin-top:32px">
+    <div class="card">
+      <h3>Взгляд эксперта на твой бизнес</h3>
+      <p>Я лично провожу разборы для всех кто выбрал «Систему». Заполняешь 12 вопросов о своём бизнесе и присылаешь мне. Я смотрю на твою ситуацию со стороны и записываю персональный разбор. Вот что вижу в твоих цифрах, вот главная дыра, вот с чего начать именно тебе.</p>
+      <p>Не шаблонный ответ, а разбор конкретно твоей ситуации. Человек внутри своего бизнеса часто не видит очевидного. Внешний взгляд эксперта это принципиально другой уровень.</p>
+    </div>
+    <div class="card">
+      <h3>Приоритеты именно для тебя</h3>
+      <p>Инструменты покажут где проблемы. Я скажу с какой начать первой и почему именно с неё.</p>
+      <p>Это экономит недели хаотичных действий когда непонятно за что хвататься. Уходишь не просто с пониманием что не так, а с чётким первым шагом.</p>
+    </div>
+    <div class="card">
+      <h3>Письменное резюме после разбора</h3>
+      <p>После голосового разбора получаешь одностраничный документ с главными выводами и приоритетами. Можно вернуться в любой момент, не нужно переслушивать всё заново.</p>
+    </div>
+    <div class="card">
+      <h3>Один вопрос после разбора</h3>
+      <p>Что-то осталось непонятным, напиши. Отвечу текстом. Уходишь с ясностью, а не с новыми сомнениями.</p>
+    </div>
+  </div>
+  <div class="video-ph" data-video="sistema" style="margin-top:32px">Здесь будет видео</div>
+</section>
+
+<section class="soft" id="tarify">
+  <div class="wrap">
+    <h2>Тарифы</h2>
+    <p class="lead" style="margin-bottom:36px">Хочешь разобраться сам, бери «Диагноз». Хочешь чтобы эксперт посмотрел на твои цифры лично, бери «Систему».</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Диагноз</h3>
+        <div class="price">3 900 ₽<small>Разовая покупка, доступ навсегда</small></div>
+        <p>Все 8 инструментов. Разбираешься сам, берёшь нужный под свою задачу и применяешь.</p>
+        <ul>
+          <li>Маршрутная карта, с чего начать</li>
+          <li>Таблица норм, проверь свои цифры</li>
+          <li>Практикум, найди дыру за один вечер</li>
+          <li>Чек-лист, 10 мест где утекают деньги</li>
+          <li>Рабочая тетрадь, 12 решений</li>
+          <li>Гайд, как поднять цену</li>
+          <li>Таблица, считает сама</li>
+          <li>План первых 30 дней</li>
+        </ul>
+        <button class="btn btn-wide" data-order="Диагноз" data-price="3900">Купить за 3 900 ₽</button>
+      </div>
+
+      <div class="plan best">
+        <div class="tag">не более 15 мест в месяц</div>
+        <h3>Система</h3>
+        <div class="price">7 900 ₽<small>Разовая покупка, доступ навсегда</small></div>
+        <p>Все 8 инструментов плюс я лично тебя разберу.</p>
+        <ul>
+          <li>Всё из тарифа «Диагноз»</li>
+          <li>Взгляд эксперта на твой бизнес</li>
+          <li>Приоритеты именно для тебя</li>
+          <li>Персональный разбор</li>
+          <li>Письменное резюме после разбора</li>
+          <li>Один вопрос после разбора</li>
+        </ul>
+        <div class="kicker" style="font-weight:600;margin-bottom:4px;color:var(--ink)">Как это работает</div>
+        <ol class="steps">
+          <li>Покупаешь и получаешь все материалы сразу</li>
+          <li>Проходишь практикум и заполняешь диагностику</li>
+          <li>Присылаешь мне в личные сообщения</li>
+          <li>В течение 3 рабочих дней разбор и резюме</li>
+          <li>Задаёшь вопрос если нужно</li>
+        </ol>
+        <button class="btn btn-wide" data-order="Система" data-price="7900">Купить за 7 900 ₽</button>
+      </div>
+    </div>
+
+    <div class="cmp">
+      <div class="crow"><div>Что входит</div><div>Диагноз</div><div class="best">Система</div></div>
+      <div class="crow"><div>Маршрутная карта и таблица норм</div><div class="yes">есть</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Практикум и чек-лист</div><div class="yes">есть</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Рабочая тетрадь и гайд по цене</div><div class="yes">есть</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Таблица расчётов и план на 30 дней</div><div class="yes">есть</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Взгляд эксперта на твой бизнес</div><div class="no">нет</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Приоритеты именно для тебя</div><div class="no">нет</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Письменное резюме после разбора</div><div class="no">нет</div><div class="best yes">есть</div></div>
+      <div class="crow"><div>Один вопрос после разбора</div><div class="no">нет</div><div class="best yes">есть</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Кому подойдёт этот продукт</h2>
+  <div class="grid grid-3" style="margin-top:30px">
+    <div class="card">
+      <h3>Собственники малого бизнеса</h3>
+      <p>Если устали от того что деньги есть в обороте но нет в кармане, здесь найдёте конкретные инструменты чтобы это исправить без найма финдиректора.</p>
+    </div>
+    <div class="card">
+      <h3>Самозанятые и фрилансеры</h3>
+      <p>Если доход нестабильный и непонятно как планировать, научитесь считать свои реальные цифры и выстроите хотя бы минимальную финансовую систему.</p>
+    </div>
+    <div class="card">
+      <h3>Предприниматели на старте</h3>
+      <p>Если только начинаете или планируете, заложите правильную финансовую основу сразу, не через два года болезненного опыта.</p>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="voprosy">
+  <div class="wrap faq">
+    <h2>Ответы на вопросы</h2>
+    <details>
+      <summary>Подойдёт ли мне если я новичок?</summary>
+      <p>Материал написан для людей которые уже ведут бизнес или работают на себя. Если вы новичок, часть терминов придётся погуглить. Но базовые понятия объясняются внутри каждого инструмента.</p>
+    </details>
+    <details>
+      <summary>У меня маленький бизнес, мне это нужно?</summary>
+      <p>Чем меньше бизнес, тем острее каждая финансовая ошибка. Все инструменты работают от 100 000 ₽ выручки в месяц.</p>
+    </details>
+    <details>
+      <summary>Чем это отличается от бесплатной таблицы из интернета?</summary>
+      <p>Таблица считает цифры. Этот продукт объясняет что они значат, показывает где потери и даёт 12 конкретных решений. Разница как между весами и диетологом.</p>
+    </details>
+    <details>
+      <summary>Когда получу материалы?</summary>
+      <p>После оплаты на ваш e-mail придёт письмо с доступами и подробными инструкциями. Не нашли письмо? Проверьте папки «Спам», «Реклама», «Соцсети» или «Промоакции».</p>
+    </details>
+    <details>
+      <summary>Могу ли я повысить тариф?</summary>
+      <p>Да, у вас будет такая опция сразу после оплаты. Но повышение тарифа происходит по полной цене тарифа, поэтому удобнее сразу брать тариф «Система».</p>
+    </details>
+    <details>
+      <summary>А если не найду ни одной проблемы?</summary>
+      <p>Напишите мне, лично посмотрю. Если всё действительно идеально, верну деньги.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Начни сегодня</h2>
+    <p>Через неделю ты либо найдёшь деньги которые уже есть в бизнесе, либо убедишься что всё хорошо и перестанешь тратить силы на тревогу.</p>
+    <a href="#tarify" class="btn" style="margin-top:14px">Выбрать тариф</a>
+    <div class="note">Гарантия возврата · Доступ навсегда · Без подписки</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="offer.html">Публичная оферта</a>
+    </div>
+    <div>© 2026 «Деньги под контролем»</div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <button class="close" id="closeBtn" aria-label="Закрыть">&times;</button>
+    <h3 id="mtitle">Оформление заказа</h3>
+    <div class="sub" id="msub">Тариф «Диагноз», 3 900 ₽</div>
+    <form id="orderForm" novalidate>
+      <input type="hidden" name="tariff" id="tariff" value="Диагноз">
+      <input type="hidden" name="price" id="price" value="3900">
+      <label for="name">Имя</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+      <label for="email">E-mail для доступа к материалам</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" required autocomplete="tel">
+      <label class="check">
+        <input type="checkbox" id="agree" name="agree" required>
+        <span>Я согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a> и принимаю условия <a href="offer.html" target="_blank">публичной оферты</a></span>
+      </label>
+      <button type="submit" class="btn btn-wide" id="submitBtn">Перейти к оплате</button>
+      <div class="form-msg" id="formMsg"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+window.DEMO=true;
+(function(){
+  var overlay=document.getElementById('overlay');
+  var form=document.getElementById('orderForm');
+  var msg=document.getElementById('formMsg');
+  var submitBtn=document.getElementById('submitBtn');
+
+  function openModal(tariff,price){
+    document.getElementById('tariff').value=tariff;
+    document.getElementById('price').value=price;
+    document.getElementById('msub').textContent='Тариф «'+tariff+'», '+Number(price).toLocaleString('ru-RU')+' ₽';
+    msg.className='form-msg';msg.textContent='';
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    setTimeout(function(){document.getElementById('name').focus();},50);
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.querySelectorAll('[data-order]').forEach(function(b){
+    b.addEventListener('click',function(){openModal(b.getAttribute('data-order'),b.getAttribute('data-price'));});
+  });
+  document.getElementById('closeBtn').addEventListener('click',closeModal);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!document.getElementById('agree').checked){
+      msg.className='form-msg err';
+      msg.textContent='Нужно согласие с политикой и офертой.';
+      return;
+    }
+    if(!form.checkValidity()){
+      msg.className='form-msg err';
+      msg.textContent='Проверьте поля формы.';
+      return;
+    }
+    submitBtn.disabled=true;
+    submitBtn.textContent='Отправляем...';
+    if(window.DEMO){
+      msg.className='form-msg ok';
+      msg.textContent='Это демонстрация макета. На рабочем сайте отсюда откроется оплата Яндекс Пэй, а заявка уйдёт на почту и в таблицу.';
+      submitBtn.disabled=false;
+      submitBtn.textContent='Перейти к оплате';
+      return;
+    }
+    fetch('order.php',{method:'POST',body:new FormData(form)})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(d.ok&&d.payment_url){window.location.href=d.payment_url;return;}
+        if(d.ok){
+          msg.className='form-msg ok';
+          msg.textContent='Заявка принята, письмо со ссылкой на оплату уже в пути.';
+          form.reset();
+        }else{
+          throw new Error(d.error||'fail');
+        }
+      })
+      .catch(function(){
+        msg.className='form-msg err';
+        msg.textContent='Не получилось отправить. Напишите нам на почту, поможем вручную.';
+      })
+      .then(function(){
+        submitBtn.disabled=false;
+        submitBtn.textContent='Перейти к оплате';
+      });
+  });
+})();
+</script>
 </body>
 </html>
