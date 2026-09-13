@@ -34,7 +34,9 @@ a{color:inherit}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-left:20px;padding-right:20px}
 section{padding-block:72px}
 .soft{background:var(--bg-soft)}
-h1,h2,h3{line-height:1.15;margin:0 0 18px;letter-spacing:-0.02em}
+h1,h2,h3{line-height:1.15;margin:0 0 18px;letter-spacing:-0.02em;text-wrap:balance}
+.kicker,.hero .q li,.faq summary{text-wrap:balance}
+p,.weeks li,.plan li,.steps li{text-wrap:pretty}
 h1{font-size:clamp(30px,5vw,52px);font-weight:800}
 h2{font-size:clamp(25px,3.6vw,38px);font-weight:700}
 h3{font-size:clamp(19px,2.2vw,23px);font-weight:700}
@@ -55,7 +57,7 @@ p{margin:0 0 16px;color:var(--ink-2)}
 .hero-art .a3{width:110px;left:0;bottom:10px}
 .hero .q{list-style:none;padding:0;margin:0 0 32px;max-width:720px}
 .hero .q li{padding:14px 0 14px 30px;border-bottom:1px solid var(--line);position:relative;color:var(--ink);font-weight:500}
-.hero .q li:before{content:"";position:absolute;left:4px;top:22px;width:12px;height:3px;background:var(--accent)}
+.hero .q li:before{content:"";position:absolute;left:4px;top:26px;width:12px;height:3px;background:var(--accent)}
 
 .grid{display:grid;gap:22px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
@@ -73,9 +75,9 @@ p{margin:0 0 16px;color:var(--ink-2)}
 .feature p{font-size:16px;margin:0}
 .feature p.hook{color:var(--ink)}
 .weeks{list-style:none;margin:0;padding:0;font-size:15px;color:var(--ink-2)}
-.weeks li{padding:7px 0;border-top:1px solid var(--line)}
+.weeks li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px;padding:7px 0;border-top:1px solid var(--line)}
 .weeks li:first-child{border-top:0;padding-top:0}
-.weeks b{display:inline-block;min-width:78px;color:var(--ink)}
+.weeks b{color:var(--ink)}
 .feature .btn{margin-top:auto;width:100%;text-align:center;padding:17px}
 .feature p:last-of-type{margin-bottom:10px}
 .badge{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#000;background:var(--accent);padding:6px 11px;border-radius:6px;white-space:nowrap}
@@ -102,6 +104,7 @@ p{margin:0 0 16px;color:var(--ink-2)}
 .plan ul li:last-child{border-bottom:0}
 .plan ul li:before{content:"";position:absolute;left:2px;top:15px;width:12px;height:7px;border-left:2px solid #1c1b18;border-bottom:2px solid #1c1b18;transform:rotate(-45deg)}
 .plan .btn{margin-top:auto}
+@media(min-width:701px){.plan>p{min-height:3.2em}}
 .steps{counter-reset:s;list-style:none;padding:0;margin:18px 0 26px}
 .steps li{counter-increment:s;position:relative;padding:8px 0 8px 34px;font-size:15px;color:var(--ink-2)}
 .steps li:before{content:counter(s);position:absolute;left:0;top:9px;width:22px;height:22px;border-radius:50%;background:var(--bg-soft);color:var(--ink);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
