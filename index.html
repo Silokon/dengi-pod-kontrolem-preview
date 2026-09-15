@@ -15,12 +15,12 @@
 <link rel="preload" href="fonts/golos-600-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/golos-400-cyrillic-ext.woff2) format('woff2'); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
-@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/golos-400-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/golos-400-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/golos-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/golos-600-cyrillic-ext.woff2) format('woff2'); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/golos-400-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
 @font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/golos-600-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/golos-400-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 @font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/golos-600-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/golos-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/golos-600-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 :root{
   --y:#ffdc00;
@@ -48,11 +48,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,.btn:focus-visible{ou
 /* первый экран */
 .hero{padding-top:29px;padding-bottom:40px}
 .hero h1{font-size:36px;line-height:40px;text-align:center}
-.video{position:relative;margin-top:37px;aspect-ratio:763/440;background:#000;border:5px solid #131313;border-radius:16px;overflow:hidden}
-.video.wide{aspect-ratio:760/420}
-.video .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(255,220,0,.92)}
-.video .play:after{content:"";position:absolute;left:25px;top:19px;border-left:20px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent}
-.video .cap{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#8c8c8c;font-size:14px}
+.video{position:relative;margin-top:37px;aspect-ratio:16/9;background:#000;border:5px solid #131313;border-radius:16px;overflow:hidden}
+.video video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+.video .play{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer}
+.video .play:before{content:"";position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:var(--y);box-shadow:0 6px 24px rgba(0,0,0,.18);transition:transform .2s ease}
+.video .play:after{content:"";position:absolute;left:50%;top:50%;margin:-14px 0 0 -8px;border-left:24px solid #000;border-top:14px solid transparent;border-bottom:14px solid transparent}
+.video .play:hover:before{transform:scale(1.07)}
+.video .play:focus-visible{outline:3px solid var(--y);outline-offset:-6px}
 .hero .lead{margin-top:28px;font-size:24px;line-height:32px;font-weight:600}
 .hero .sub{margin-top:16px;font-size:18px;line-height:25px}
 .dash{list-style:none;margin:14px 0 0;padding:0;font-size:18px;line-height:25px}
@@ -112,9 +114,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,.btn:focus-visible{ou
 
 /* автор */
 .author .row{margin-top:36px;display:grid;grid-template-columns:268px minmax(0,1fr);column-gap:40px;align-items:start}
-.author .ph{width:268px;height:268px;border-radius:10px;background:var(--y);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:15px;text-align:center;padding:20px}
-.author .dash{margin-top:0}
-.author .dash li+li{margin-top:20px}
+.author .ph{width:268px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:#e9e9e9}
+.author h3{font-size:22px;line-height:25px;margin-bottom:12px}
+.author h3+p,.author h3+.dash{margin-top:0}
+.author p{font-size:18px;line-height:25px}
+.author p+h3{margin-top:28px}
+.author .dash li+li{margin-top:12px}
 
 /* кому подойдёт */
 .who .zi img{width:190px;height:190px}
@@ -127,8 +132,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,.btn:focus-visible{ou
 .faq h2+details{border-top:1px solid var(--line)}
 .faq summary{list-style:none;cursor:pointer;position:relative;padding:22px 56px 22px 0;font-size:18px;line-height:24px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary:after{content:"";position:absolute;right:6px;top:50%;width:20px;height:20px;margin-top:-10px;background:linear-gradient(#000,#000) center/20px 1.5px no-repeat,linear-gradient(#000,#000) center/1.5px 20px no-repeat;transition:transform .2s ease}
-.faq details[open] summary:after{transform:rotate(45deg)}
+.faq summary:after{content:"";position:absolute;right:6px;top:50%;width:20px;height:20px;margin-top:-10px;background:linear-gradient(#000,#000) center/20px 1.5px no-repeat,linear-gradient(#000,#000) center/1.5px 20px no-repeat;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.faq details[open]:not(.closing) summary:after{transform:rotate(45deg)}
 .faq details p{padding:0 56px 22px 0;font-size:18px;line-height:25px}
 
 /* финал */
@@ -173,15 +178,18 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
 @media(max-width:640px){
   .zi,.zi.rev,.dark .zi,.dark .zi.rev{grid-template-columns:minmax(0,1fr);grid-template-areas:"i" "t";row-gap:26px}
   .author .row{grid-template-columns:minmax(0,1fr);row-gap:28px}
-  .author .ph{width:100%;height:auto;aspect-ratio:1/1;max-width:320px}
+  .author .ph{width:100%;max-width:320px}
 }
 @media(max-width:480px){
   .col{padding-inline:max(20px,calc(50vw - 150px))}
   .hero{padding-top:20px}
   .hero h1{font-size:26px;line-height:31px}
   .video{margin-top:12px;border-width:3px;border-radius:12px}
+  .video .play:before{width:60px;height:60px;margin:-30px 0 0 -30px}
+  .video .play:after{margin:-11px 0 0 -6px;border-left-width:19px;border-top-width:11px;border-bottom-width:11px}
   .hero .lead{margin-top:24px;font-size:20px;line-height:24px}
-  .hero .sub,.dash{font-size:16px;line-height:22px}
+  .hero .sub,.dash,.author p{font-size:16px;line-height:22px}
+  .author h3{font-size:20px;line-height:24px}
   .btn{height:69px;font-size:18px}
   .h2,.h2.sm{font-size:30px;line-height:36px}
   .uline{width:319px;height:10px;margin-top:8px}
@@ -203,7 +211,10 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
   .list{font-size:16px;line-height:22px}
   .price .note{font-size:13px;line-height:16px}
   .why .t{font-size:24px;line-height:29px}
-  footer .links a{font-size:14px;line-height:19px;margin-bottom:8px}
+  footer .links a{font-size:14px;line-height:19px;margin-bottom:0;padding:4px 0}
+  footer .req{line-height:24px}
+  footer .req a{display:inline-block;padding:4px 0;line-height:16px}
+  footer .up{display:inline-block;padding:4px 0}
   footer .fgrid{grid-template-columns:1fr;padding-inline:20px;gap:22px}
   footer .copy,footer .up{justify-self:center}
   footer .copy{order:2}
@@ -217,13 +228,17 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
   .overlay{padding:12px}
   .modal{padding:26px 20px;max-height:calc(100dvh - 24px)}
 }
+@media(max-width:360px){
+  .video .play:before{width:46px;height:46px;margin:-23px 0 0 -23px}
+  .video .play:after{margin:-8px 0 0 -4px;border-left-width:14px;border-top-width:8px;border-bottom-width:8px}
+}
 </style>
 </head>
 <body id="top">
 
 <section class="hero col">
   <h1>Деньги под контролем</h1>
-  <div class="video" data-video="hero"><span class="play" aria-hidden="true"></span><span class="cap">Здесь будет видео</span></div>
+  <div class="video"><video playsinline preload="metadata" poster="video/hero.jpg"><source src="video/hero.mp4" type="video/mp4"></video><button class="play" type="button" aria-label="Смотреть видео"></button></div>
   <p class="lead">Редкая возможность за один вечер найти, куда уходят твои деньги, и получить конкретный план, что с этим делать.</p>
   <p class="sub">Большинство предпринимателей работают вслепую: выручка есть, а что происходит с деньгами, непонятно. Работают больше, зарабатывают меньше и не знают почему.</p>
   <ul class="dash">
@@ -244,7 +259,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <p>Это первое, что открываешь после покупки. Одна страница, которая говорит, что делать сегодня, на этой неделе и к концу месяца. Не потеряешься и не будешь смотреть на папку с файлами, не зная, за что хвататься.</p>
         <p>В реальном времени видишь: вот твой маршрут, вот порядок, вот что будет на выходе каждого шага.</p>
       </div>
-      <img src="img/map.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/map.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <div class="zi rev">
       <div class="zt">
@@ -252,7 +267,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <p>Вот было бы здорово знать: у меня нормально или уже плохо? Здесь именно это.</p>
         <p>Нормы маржи, ФОТ, прибыли и запаса прочности для услуг, торговли, производства, онлайна и общепита. Находишь свою строку и сразу видишь, где ты в зелёной зоне, а где горит красный. Без этого невозможно принять ни одно нормальное финансовое решение.</p>
       </div>
-      <img src="img/chart.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/chart.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <div class="zi">
       <div class="zt">
@@ -261,7 +276,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <p>5 шагов прямо на твоих цифрах: чистая прибыль, маржа, ФОТ, стоимость клиента, запас прочности. На каждом шаге задание, пример и норма. В конце диагноз и три конкретных первых шага, написанных твоей рукой.</p>
         <p>Не читаешь теорию, делаешь прямо сейчас на своих данных.</p>
       </div>
-      <img src="img/search.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/search.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <a class="btn btn-mid" href="#tarify">Выбрать тариф</a>
     <div class="zi rev">
@@ -271,7 +286,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <p>Ставишь галочки там, где узнал себя, у большинства выходит 5-7 из 10. Сразу видно, какая дыра стоит тебе больше всего. С неё и начинаешь, не гадаешь, не распыляешься.</p>
         <p>Этот лист сохраняют и пересылают партнёрам.</p>
       </div>
-      <img src="img/checklist.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/checklist.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <div class="zi">
       <div class="zt">
@@ -280,7 +295,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <p>12 инструментов под 12 самых частых финансовых проблем малого бизнеса. Каждый в формате: почему возникает → что конкретно делать → реальный пример с цифрами → как применить прямо сейчас.</p>
         <p>Не читаешь всё подряд, открываешь тот, что про твою боль, и работаешь с ним.</p>
       </div>
-      <img src="img/notebook.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/notebook.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <div class="zi rev">
       <div class="zt">
@@ -289,7 +304,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <p>Здесь 4 стратегии повышения, психология цены и готовые фразы для разговора с клиентом. Включая ответы на «дорого», «у конкурентов дешевле» и «мы давно работаем».</p>
         <p>И главное: скидка 10% при марже 30% это минус треть прибыли. После этого гайда больше не соглашаешься на скидки, не считая.</p>
       </div>
-      <img src="img/price.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/price.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <div class="zi">
       <div class="zt">
@@ -297,7 +312,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <p>Вводишь цифры в жёлтые ячейки, она сама считает все 7 показателей и подсвечивает красным, где проблема. Маржа, ФОТ, прибыль, LTV, CAC, запас прочности: всё в одном месте.</p>
         <p>Заполняешь раз в месяц. За 20 минут видишь полную картину и понимаешь, что менять.</p>
       </div>
-      <img src="img/abacus.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/abacus.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <div class="zi rev">
       <div class="zt">
@@ -306,7 +321,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <p>Неделя 1: считаешь и видишь реальную картину.<br>Неделя 2: закрываешь самую дорогую дыру.<br>Неделя 3: выстраиваешь систему контроля.<br>Неделя 4: сравниваешь результат с точкой отсчёта.</p>
         <p>К концу месяца не просто знаешь свои цифры. Уже что-то изменил.</p>
       </div>
-      <img src="img/calendar.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/calendar.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <a class="btn btn-mid w2" href="#tarify">Выбрать тариф</a>
   </div>
@@ -323,7 +338,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
           <p>Заполняешь 12 вопросов о своём бизнесе и присылаешь мне. Я смотрю на твою ситуацию со стороны и записываю персональный разбор. Вот что вижу в твоих цифрах, вот главная дыра, вот с чего начать именно тебе.</p>
           <p>Не шаблонный ответ. Разбор конкретно твоей ситуации. Человек внутри своего бизнеса часто не видит очевидного. Внешний взгляд эксперта это принципиально другой уровень.</p>
         </div>
-        <img src="img/eyes.webp" alt="" width="240" height="240" loading="lazy">
+        <img src="img/eyes.webp" alt="" width="720" height="720" loading="lazy">
       </div>
       <div class="zi">
         <div class="zt">
@@ -331,21 +346,21 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
           <p>Инструменты покажут, где проблемы. Я скажу, с какой начать первой, и почему именно с неё.</p>
           <p>Это экономит недели хаотичных действий, когда непонятно, за что хвататься. Уходишь не просто с пониманием, что не так, а с чётким первым шагом.</p>
         </div>
-        <img src="img/target.webp" alt="" width="240" height="240" loading="lazy">
+        <img src="img/target.webp" alt="" width="720" height="720" loading="lazy">
       </div>
       <div class="zi rev">
         <div class="zt">
           <h3>Письменное резюме после разбора</h3>
           <p>После голосового разбора получаешь одностраничный документ с главными выводами и приоритетами. Можно вернуться в любой момент, не нужно переслушивать всё заново.</p>
         </div>
-        <img src="img/memo.webp" alt="" width="240" height="240" loading="lazy">
+        <img src="img/memo.webp" alt="" width="720" height="720" loading="lazy">
       </div>
       <div class="zi">
         <div class="zt">
           <h3>Один вопрос после разбора</h3>
           <p>Что-то осталось непонятным, напиши. Отвечу текстом. Уходишь с ясностью, а не с новыми сомнениями.</p>
         </div>
-        <img src="img/question.webp" alt="" width="240" height="240" loading="lazy">
+        <img src="img/question.webp" alt="" width="720" height="720" loading="lazy">
       </div>
     </div>
     <a class="btn" href="#tarify">Выбрать тариф</a>
@@ -374,7 +389,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <li class="off">Один вопрос после разбора</li>
       </ol>
       <button class="btn" data-order="Диагноз" data-price="3900">Купить за 3 900 ₽</button>
-      <p class="note">Если возникли проблемы с оплатой, напишите на [ПОЧТА]</p>
+      <p class="note">Если возникли проблемы с оплатой, напишите на <a href="mailto:gradesment@gmail.com">gradesment@gmail.com</a></p>
     </div>
     <div class="price dk">
       <h3>Система: 7 900 ₽</h3>
@@ -404,28 +419,31 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <li>Задаёшь вопрос, если нужно</li>
       </ol>
       <button class="btn" data-order="Система" data-price="7900">Купить за 7 900 ₽</button>
-      <p class="note">Если возникли проблемы с оплатой, напишите на [ПОЧТА]</p>
+      <p class="note">Если возникли проблемы с оплатой, напишите на <a href="mailto:gradesment@gmail.com">gradesment@gmail.com</a></p>
     </div>
   </div>
 </section>
 
 <section class="sec col why">
   <p class="t">Хочешь разобраться сам, бери&nbsp;«Диагноз». Хочешь, чтобы эксперт посмотрел на твои цифры лично, бери&nbsp;«Система».</p>
-  <div class="video wide" data-video="sistema"><span class="play" aria-hidden="true"></span><span class="cap">Здесь будет видео</span></div>
+  <div class="video"><video playsinline preload="none" poster="video/vybor.jpg"><source src="video/vybor.mp4" type="video/mp4"></video><button class="play" type="button" aria-label="Смотреть видео"></button></div>
 </section>
 
 <section class="sec col author">
-  <h2 class="h2 sm">[Имя автора], автор продукта</h2>
+  <h2 class="h2 sm">Артем Гагарин, автор продукта</h2>
   <div class="row">
-    <div class="ph">
-      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
-      <span>Здесь будет фото автора</span>
+    <img class="ph" src="img/author.jpg" alt="Артем Гагарин" width="600" height="800" loading="lazy">
+    <div class="about">
+      <h3>Коротко об опыте автора</h3>
+      <p>С 2017 года строю бизнес по производству портретов на холсте. Начинал в одиночку: торговая точка в ТРЦ, сам менеджер, сам продавец, без выходных. За 8 лет вырос до собственника-стратега с командой 80+ человек: 4 РОПа, 2 управляющих, личный HR-отдел и собственное производство в офисе 400 м² в Санкт-Петербурге. Прошёл бизнес через ковид и 2022 год: не просто выжил, а вырос в обе кризисные волны.</p>
+      <h3>Цифры и достижения</h3>
+      <ul class="dash">
+        <li>Средняя выручка сейчас: 15-16 млн ₽ в месяц, рекордный месяц: 27 млн ₽</li>
+        <li>Во время ковида сократил штат на 20% и одновременно поднял эффективность на 20%</li>
+        <li>Перешёл с решений «на глаз» на решения по цифрам: начал системно считать показатели, точно прогнозировать выручку и поднял средний чек</li>
+        <li>Прошёл путь от менеджера торговой точки до собственника, полностью делегировавшего операционку команде</li>
+      </ul>
     </div>
-    <ul class="dash">
-      <li>[Коротко об опыте автора]</li>
-      <li>[Цифры и достижения]</li>
-      <li>[Чем автор может быть полезен покупателю]</li>
-    </ul>
   </div>
 </section>
 
@@ -438,21 +456,21 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <h3>Собственники малого бизнеса</h3>
         <p>Если устали от того, что деньги есть в обороте, но нет в кармане, здесь найдёте конкретные инструменты, чтобы это исправить без найма финдиректора.</p>
       </div>
-      <img src="img/store.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/store.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <div class="zi">
       <div class="zt">
         <h3>Самозанятые и фрилансеры</h3>
         <p>Если доход нестабильный и непонятно, как планировать, научитесь считать свои реальные цифры и выстроите хотя бы минимальную финансовую систему.</p>
       </div>
-      <img src="img/laptop.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/laptop.webp" alt="" width="720" height="720" loading="lazy">
     </div>
     <div class="zi rev">
       <div class="zt">
         <h3>Предприниматели на старте</h3>
         <p>Если только начинаете или планируете, заложите правильную финансовую основу сразу, не через два года болезненного опыта.</p>
       </div>
-      <img src="img/rocket.webp" alt="" width="240" height="240" loading="lazy">
+      <img src="img/rocket.webp" alt="" width="720" height="720" loading="lazy">
     </div>
   </div>
   <a class="btn" href="#tarify">Выбрать тариф</a>
@@ -516,7 +534,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <li class="off">Один вопрос после разбора</li>
       </ol>
       <button class="btn" data-order="Диагноз" data-price="3900">Купить за 3 900 ₽</button>
-      <p class="note">Если возникли проблемы с оплатой, напишите на [ПОЧТА]</p>
+      <p class="note">Если возникли проблемы с оплатой, напишите на <a href="mailto:gradesment@gmail.com">gradesment@gmail.com</a></p>
     </div>
     <div class="price dk">
       <h3>Система: 7 900 ₽</h3>
@@ -546,13 +564,13 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <li>Задаёшь вопрос, если нужно</li>
       </ol>
       <button class="btn" data-order="Система" data-price="7900">Купить за 7 900 ₽</button>
-      <p class="note">Если возникли проблемы с оплатой, напишите на [ПОЧТА]</p>
+      <p class="note">Если возникли проблемы с оплатой, напишите на <a href="mailto:gradesment@gmail.com">gradesment@gmail.com</a></p>
     </div>
   </div>
 
 <section class="sec col why why2">
   <p class="t">Хочешь разобраться сам, бери&nbsp;«Диагноз». Хочешь, чтобы эксперт посмотрел на твои цифры лично, бери&nbsp;«Система».</p>
-  <div class="video wide" data-video="sistema"><span class="play" aria-hidden="true"></span><span class="cap">Здесь будет видео</span></div>
+  <div class="video"><video playsinline preload="none" poster="video/vybor.jpg"><source src="video/vybor.mp4" type="video/mp4"></video><button class="play" type="button" aria-label="Смотреть видео"></button></div>
 </section>
 
 <footer>
@@ -564,7 +582,7 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
         <a href="privacy.html">Политика обработки персональных данных</a>
         <a href="consent.html">Согласие на обработку персональных данных</a>
       </div>
-      <div class="req">[ИП ФИО], ИНН [ИНН], ОГРНИП [ОГРНИП], почта для связи [ПОЧТА]</div>
+      <div class="req">ИП Гагарин Артем Сергеевич, ИНН 701713125010, ОГРНИП 324700000051822, почта для связи <a href="mailto:gradesment@gmail.com">gradesment@gmail.com</a></div>
     </div>
     <a class="up" href="#top">К началу страницы ↑</a>
   </div>
@@ -598,6 +616,56 @@ input.invalid{border-color:#c0392b;background:#fff8f7}
 
 <script>
 window.DEMO=true;
+// Видео: чистая обложка с кнопкой, панель управления после запуска, одно видео за раз
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('.video video'));
+  vids.forEach(function(v){
+    var btn=v.parentNode.querySelector('.play');
+    function start(){
+      btn.hidden=true;
+      v.controls=true;
+      v.focus({preventScroll:true});
+      var pr=v.play();
+      if(pr&&pr.catch)pr.catch(function(){});
+    }
+    btn.addEventListener('click',start);
+    v.addEventListener('play',function(){
+      btn.hidden=true;v.controls=true;
+      vids.forEach(function(o){if(o!==v&&!o.paused)o.pause();});
+    });
+  });
+})();
+// Плавное раскрытие ответов на вопросы
+(function(){
+  if(!Element.prototype.animate)return;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('.faq details').forEach(function(d){
+    var s=d.querySelector('summary'),anim=null;
+    function run(from,to,opening){
+      d.style.overflow='hidden';
+      anim=d.animate({height:[from,to]},{duration:380,easing:'cubic-bezier(.4,0,.2,1)'});
+      anim.onfinish=function(){
+        anim=null;
+        if(!opening){d.open=false;d.classList.remove('closing');}
+        d.style.overflow='';
+      };
+    }
+    s.addEventListener('click',function(e){
+      if(reduce&&reduce.matches)return;
+      e.preventDefault();
+      var from=d.offsetHeight+'px';
+      if(anim){anim.onfinish=null;anim.cancel();anim=null;}
+      if(!d.open||d.classList.contains('closing')){
+        d.classList.remove('closing');
+        d.open=true;
+        run(from,d.offsetHeight+'px',true);
+      }else{
+        d.classList.add('closing');
+        run(from,(s.offsetHeight+d.offsetHeight-d.clientHeight)+'px',false);
+      }
+    });
+  });
+})();
 (function(){
   var overlay=document.getElementById('overlay');
   var modal=overlay.querySelector('.modal');
